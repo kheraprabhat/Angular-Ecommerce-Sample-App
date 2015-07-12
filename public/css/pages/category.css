@@ -1,0 +1,20 @@
+.category-page { padding: 10px 0; }
+
+.category-page-left { float: left; width: 200px; font-family: arial; text-transform: capitalize;}
+	.filter-box { padding-bottom: 10px; }
+	.filter-box h3 { padding-bottom: 10px; font-size: 13px; text-transform: capitalize; font-weight: bold; }
+	.filter-box ul { list-style: none; text-transform: capitalize;}
+	.filter-box a { text-decoration: none; display: block; padding: 5px; text-transform: capitalize; color: #000; }
+	.filter-box a.selected-assets, .filter-box a:hover { background: #f1f1f1; }
+
+.category-page-right {float: right; width: 771px; text-transform: capitalize;}
+	.category-products ul { list-style: none; float: right; }
+	.category-products li { float: left; width: 235px; height: 477px; border: 1px solid #ccc; margin: 0 0 20px 20px; }
+	.category-products li span { display: block; text-align: left;}
+	.product-image { text-align: center; overflow: hidden; }
+	.product-image img {text-align: center; }
+	.product-details { padding: 10px; }
+	.product-buttons-box { padding-top: 7px; }
+	.category-products .product-buttons.cart {float: left;}
+	.category-products .product-buttons.wishlist {float: right;}
+	.category-products .product-filter {padding: 5px 5px 10px 19px;}

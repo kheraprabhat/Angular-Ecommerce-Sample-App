@@ -1,0 +1,84 @@
+<breadcrumb source="breadcrumb"></breadcrumb>
+<div class="category-page" ng-init="publishCategoryDetails()">
+    <div class="category-page-left">
+    	<div class="filter-box" ng-if="brandsForSelectedcategoryProducts.length">
+    		<h3>Select Brands</h3>
+    		<ul>
+    			<li ng-repeat="subpart in brandsForSelectedcategoryProducts track by $index">
+    				<input type="checkbox" ng-model="subpart.included" ng-change="addIntoFilterList(subpart, 'brand')" />
+    				<span>{{subpart.name}}</span>
+    			</li>
+    		</ul>
+    	</div>
+
+    	<div class="clear"></div>
+
+    	<div class="filter-box" ng-if="sectionForSelectedcategoryProducts.length">
+    		<h3>Product Category</h3>
+    		<ul>
+    			<li ng-repeat="subpart in sectionForSelectedcategoryProducts track by $index">
+    				<input type="checkbox" ng-model="subpart.included" ng-change="addIntoFilterList(subpart, 'productType')" />
+    				<span>{{subpart.name}}</span>
+    			</li>
+    		</ul>
+    	</div>
+
+    	<div class="clear"></div>
+
+    	<div class="filter-box" ng-if="typesForSelectedcategoryProducts.length">
+    		<h3>Product Type</h3>
+    		<ul>
+    			<li ng-repeat="subpart in typesForSelectedcategoryProducts track by $index">
+    				<input type="checkbox" ng-model="subpart.included" ng-change="addIntoFilterList(subpart, 'type')" />
+    				<span>{{subpart.name}}</span>
+    			</li>
+    		</ul>
+    	</div>
+
+    	<div class="clear"></div>
+
+    	<div class="filter-box" ng-if="ratingForSelectedcategoryProducts.length">
+    		<h3>User Rating</h3>
+    		<ul>
+    			<li ng-repeat="subpart in ratingForSelectedcategoryProducts track by $index">
+    				<input type="checkbox" ng-model="subpart.included" ng-change="addIntoFilterList(subpart, 'rating')" />
+    				<span>{{subpart.name}}</span>
+    			</li>
+    		</ul>
+    	</div>
+
+    	<div class="clear"></div>
+    </div>
+
+    <div class="category-page-right">
+    	<div class="category-products">
+    		<div class="no-result" ng-if="!allProductsForSelectedcategory.length">
+    			<p>No result found!</p>
+    		</div>
+    		<ul>
+	    		<li ng-repeat="product in allProductsForSelectedcategory track by $index">
+	    			<div class="product-image">
+	    				<a ng-click="selectedProductDetails(product)" 
+	    					href="#/category/{{getSelectedCategoryId()}}/{{product._id}}">
+	    						<img ng-src="{{product.image}}" />
+	    				</a>
+	    			</div>
+	    			<div class="clear"></div>
+	    			<div class="product-details">
+	    				<span class="product-name">{{product.name}}</span>
+	    				<span class="product-brand"><b>Brand:</b> {{product.brand}}</span>
+	    				<span class="product-price"><b>Price:</b> Rs. {{product.price}}</span>
+	    				<span class="product-rating"><b>Rating:</b> {{product.rating}}</span>
+	    				<div class="product-buttons-box">
+	    					<button class="product-buttons cart">Add to Cart</button>
+	    					<button class="product-buttons wishlist">Add to Wishlist</button>
+	    				</div>
+	    			</div>
+	    			<div class="clear"></div>
+	    		</li>
+	    	</ul>
+    	</div>
+    </div>
+
+    <div class="clear"></div>
+</div>

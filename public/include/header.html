@@ -1,0 +1,29 @@
+
+<div id="header" ng-controller="headerCtrl">
+	<div class="header-top-container">
+		<a title="Ralph Lauren" href="#/" id="logo">
+			<img alt="Ralph Lauren" src="../assets/images/global/logo-desktop.png">
+		</a>
+        <div id="utility-container">
+            <ul id="utility-nav">
+                <li><a href="#">Country : US</a></li>
+                <li><a title="Sign In | Register" href="#">Sign In | Register</a></li>
+                <li><a title="Shopping Bag" href="#">Shopping Bag(<span class="cartQ" id="cartQtyId">0</span>)</a></li>
+            </ul>
+            <div class="clear"></div>
+            <form method="GET" class="header-search-form">
+                <input type="text" class="header-search-input" />
+                <input type="submit" class="search-input-submit" value="" />
+            </form>
+        </div>
+	</div>
+    <div class="clear"></div>
+    <nav id="navigationCntr">
+        <ul class="list-unstyled primary-navigation">
+            <li class="category" ng-repeat="caregory in categoryList track by $index">
+                <a ng-class="{'active': ifSelected('/category/' + caregory.href)}" href="#/category/{{caregory.href}}" ng-click="getCategoryProducts(caregory._id)">{{caregory.name}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="clear"></div>
+</div>
