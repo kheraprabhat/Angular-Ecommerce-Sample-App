@@ -1,3 +1,9 @@
+/**
+ * @Author: krishna_aim24@yahoo.com (Krishna Kumar)
+ * @require: [Angular, jQuery, require]
+ * @Date - APR 20, 2015
+ */
+
 var express = require('express');
 var ObjectID = require('mongodb').ObjectID;
 var app = express();
